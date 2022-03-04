@@ -37,7 +37,6 @@ void Helper::drawCilinder(float radius , float height, int slices)
 void Helper::drawBaseCilinderTriangle(float base, float radius, float angle1, float angle2)
 {
     glBegin(GL_TRIANGLES);
-    // Bottom face (y = 0.0f)
     // Define vertices in counter-clockwise (CCW) order with normal pointing out
     glVertex3f( 0.0f, base, 0.0f);
     glColor3f(0.0f, angle1, angle2);     // Green

@@ -69,7 +69,7 @@ void renderScene(void)
 
 	// put drawing instructions here
 
-    Helper::drawCilinder(1,2,20);
+    Helper::drawCilinder(1,2,40);
 	// End of frame
 	glutSwapBuffers();
 }
