@@ -7,8 +7,6 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 #include <stdio.h>
-#include "tinyxml.h"
-#include "tinystr.h"
 #include "Helper.h"
 
 
@@ -47,6 +45,7 @@ void changeSize(int w, int h)
 	glMatrixMode(GL_PROJECTION);
 	// Load the identity matrix
 	glLoadIdentity();
+
 	// set the perspective
 	gluPerspective(45.0f, ratio, 1.0f, 1000.0f);
 	// return to the model view matrix mode

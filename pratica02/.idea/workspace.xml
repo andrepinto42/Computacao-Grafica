@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="951a86ec-793d-4cf2-8c44-beaea73b520d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pratica02.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/reply/cache-v2-d2c197e02021f1916758.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/reply/cmakeFiles-v1-3b2a4ba85243c70c84fc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/reply/codemodel-v2-da3a763444a782d31d04.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/reply/index-2022-03-04T10-40-48-0829.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/reply/target-class1-Debug-668efe61b02c2cae930a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.cmake/api/v1/reply/toolchains-v1-9050b2082b4fe5719297.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.ninja_deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.21.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.21.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.21.1/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.21.1/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/class1.dir/Helper.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/class1.dir/helper.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/class1.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/class1.dir/xmlParser.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Testing/Temporary/LastTest.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/build.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/class1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/._Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/changes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/annotated.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlAttribute-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlAttribute.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlAttribute.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlBase-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlBase.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlBase.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlComment-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlComment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlComment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlDeclaration-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlDeclaration.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlDeclaration.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlDocument-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlDocument.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlDocument.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlElement-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlElement.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlElement.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlHandle-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlHandle.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlNode-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlNode.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlNode.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlPrinter-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlPrinter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlPrinter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlText-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlText.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlText.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlUnknown-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlUnknown.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlUnknown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlVisitor-members.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlVisitor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classTiXmlVisitor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/classes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/deprecated.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/doxygen.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/doxygen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/files.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x63.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x64.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x65.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x66.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x67.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x69.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x6c.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x6e.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x6f.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x70.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x71.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x72.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x73.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x74.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x75.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_0x76.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_enum.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x63.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x64.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x65.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x66.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x67.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x69.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x6c.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x6e.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x70.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x71.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x72.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x73.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x74.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x75.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_func_0x76.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_rela.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/functions_vars.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/hierarchy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/pages.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/tab_b.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/tab_l.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/tab_r.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/tabs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/tinystr_8h_source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/tinyxml_8h_source.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/docs/tutorial0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/tinyXmlTest.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/tinyXmlTestSTL.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/tinystr.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/tinystr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/tinyxml.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/tinyxml.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/tinyxml.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/tinyxmlSTL.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/tinyxml_lib.vcxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/tinyxmlerror.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/tinyxmlparser.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/utf8test.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/utf8test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/utf8testverify.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinyxml/xmltest.cpp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="25vMdsXY4OZIL2hjcUNAMdDootS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="951a86ec-793d-4cf2-8c44-beaea73b520d" name="Changes" comment="" />
+      <created>1646403199115</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646403199115</updated>
+      <workItem from="1646403202452" duration="123000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
