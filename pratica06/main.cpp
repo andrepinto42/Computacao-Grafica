@@ -16,7 +16,7 @@
 #endif
 
 
-float camX = 00, camY = 30, camZ = 40;
+float camX = -100, camY = 30, camZ = -100;
 int startX, startY, tracking = 0;
 
 int alpha = 0, beta =45, r = 50;
@@ -66,7 +66,7 @@ void renderScene(void) {
 
 	glLoadIdentity();
 	gluLookAt(camX, camY, camZ, 
-		      0.0,0.0,0.0,
+		      -100.0,0.0,0.0,
 			  0.0f,1.0f,0.0f);
 
 	drawTerrain();
@@ -259,9 +259,14 @@ void drawTerrain() {
 //    }
 
 
-    for (int i = 0; i < imageHeight-1; ++i) {
-        DrawStripeHeight(startX+i, startZ, lengthDivision,imageWidth,arrayGrid,i);
-    }
+//    for (int i = 0; i < imageHeight-1; ++i) {
+//        DrawStripeHeight(startX+i, startZ, lengthDivision,imageWidth,arrayGrid,i);
+//    }
+
+    DrawStripeHeight(startX, startZ, lengthDivision,imageWidth,arrayGrid,0);
+    DrawStripeHeight(startX+1, startZ, lengthDivision,imageWidth,arrayGrid,0);
+
+
 }
 
 void DrawStripe(float startX,float startZ,float lengthDivision,int numberDivisions){
@@ -282,6 +287,11 @@ void DrawStripe(float startX,float startZ,float lengthDivision,int numberDivisio
     glEnd();
 }
 
+bool active = true;
+void PrintOnce(int i)
+{
+    printf("number = %d\n",i);
+}
 //Carefull that the arrayHeights has capacity enough to suport the stripe Start
 void DrawStripeHeight(float startX,float startZ,float lengthDivision,int numberDivisions,float* arrayHeights,int currentLine){
 
@@ -290,19 +300,23 @@ void DrawStripeHeight(float startX,float startZ,float lengthDivision,int numberD
     glBegin(GL_TRIANGLE_STRIP);
     //Draw a Stripe
     for (int i = 0; i < numberDivisions ; ++i) {
-        glColor3f(0.f,7/7.f,0.f);
+        glColor3f(1.f,i/ (float) numberDivisions,0.f);
         bool isPair = (i%2) == 0;
 
         float z = isPair ? startX : endX;
         float x = floor(i/2.f) * -lengthDivision + startZ;
         float y;
         if (isPair)
-            y= arrayHeights[numberDivisions * currentLine+i];
+            y= arrayHeights[numberDivisions * currentLine + i];
         else
-            y = arrayHeights[numberDivisions * (currentLine+1) +i];
+            y = arrayHeights[numberDivisions * (currentLine+1) +i ];
 
         glVertex3d(x,y,z);
-        printf("y = %f \n",y);
+
+        if(active)
+            PrintOnce(i);
     }
     glEnd();
+    active = false;
 }
+
