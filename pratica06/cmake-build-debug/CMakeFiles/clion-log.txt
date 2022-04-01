@@ -16,7 +16,7 @@ CMake Warning (dev) at /opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21/Modu
   OpenGL_GL_PREFERENCE has not been set to "GLVND" or "LEGACY", so for
   compatibility with CMake 3.10 and below the legacy GL library will be used.
 Call Stack (most recent call first):
-  CMakeLists.txt:10 (find_package)
+  CMakeLists.txt:12 (find_package)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
 -- Configuring done

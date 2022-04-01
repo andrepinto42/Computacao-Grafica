@@ -11,20 +11,20 @@
 #ifdef __APPLE__
 #include <GLUT/glut.h>
 #else
+
 #include <GL/glew.h>
 #include <GL/glut.h>
-#endif
+#include "Axes.h"
+#include "GenerateTerrain.h"
 
+#endif
 
 float camX = -100, camY = 30, camZ = -100;
 int startX, startY, tracking = 0;
 
 int alpha = 0, beta =45, r = 50;
 
-void drawTerrain();
-void DrawStripeHeight(float startXpos,float startZ,float lengthDivision,int numberDivisions,float* arrayHeights,int currentRow);
-
-void DrawStripe(float startXpos,float startZ,float lengthDivision,int numberDivisions);
+void DrawStripeHeightReversed(float startXpos,float startZ,float lengthDivision,int numberDivisions,float* arrayHeights,int currentRow);
 
 void changeSize(int w, int h) {
 
@@ -44,17 +44,11 @@ void changeSize(int w, int h) {
     glViewport(0, 0, w, h);
 
 	// Set the correct perspective
-	gluPerspective(45,ratio,1,1000);
+	gluPerspective(45,ratio,1,10000);
 
 	// return to the model view matrix mode
 	glMatrixMode(GL_MODELVIEW);
 }
-
-float *arrayGrid;
-int imageWidth;
-int imageHeight;
-GLuint buffers[1];
-
 
 
 void renderScene(void) {
@@ -69,8 +63,8 @@ void renderScene(void) {
 		      -100.0,0.0,0.0,
 			  0.0f,1.0f,0.0f);
 
-	drawTerrain();
-
+	GenerateTerrain::drawTerrain();
+    Axes::DrawAxes();
 
 // End of frame
 	glutSwapBuffers();
@@ -152,57 +146,6 @@ void processMouseMotion(int xx, int yy) {
 }
 
 
-void init() {
-
-// 	Load the height map "terreno.jpg"
-    unsigned int t;
-    unsigned char *imageData;
-    ilGenImages(1,&t);
-    ilBindImage(t);
-
-    // terreno.jpg is the image containing our height map
-    ilLoadImage((ILstring)"terreno.jpg");
-
-    // convert the image to single channel per pixel
-    // with values ranging between 0 and 255
-    ilConvertImage(IL_LUMINANCE, IL_UNSIGNED_BYTE);
-
-    // important: check imageWidth and imageHeight values
-    // both should be equal to 256
-    // if not there was an error loading the image
-    // most likely the image could not be found
-    imageWidth = ilGetInteger(IL_IMAGE_WIDTH);
-    imageHeight = ilGetInteger(IL_IMAGE_HEIGHT);
-
-    int numberPixels = imageWidth*imageHeight;
-    // imageData is a LINEAR array with the pixel values
-    imageData = ilGetData();
-
-    printf("width = %d height = %d\n", imageWidth, imageHeight);
-
-    // 	Build the vertex arrays
-    const float maxHeight = 20.f;
-
-    arrayGrid = (float*) malloc(sizeof(float) * numberPixels);
-
-    for (int i = 0; i < numberPixels; ++i) {
-        //Maybe here do some math so the vertices dont look so distance from one another
-        arrayGrid[i] =  imageData[i];
-        printf("%f ",arrayGrid[i]);
-    }
-
-
-    //Build the VBO
-    glGenBuffers(1, buffers);
-    glBindBuffer(GL_ARRAY_BUFFER,buffers[0]);
-    glBufferData(GL_ARRAY_BUFFER,numberPixels, arrayGrid, GL_STATIC_DRAW);
-
-    // 	OpenGL settings
-    glEnable(GL_DEPTH_TEST);
-	//glEnable(GL_CULL_FACE);
-}
-
-
 int main(int argc, char **argv) {
 
 // init GLUT and the window
@@ -223,100 +166,11 @@ int main(int argc, char **argv) {
 	glutMouseFunc(processMouseButtons);
 	glutMotionFunc(processMouseMotion);
 
-    // init GLEW
-    glewInit();
-    glEnableClientState(GL_VERTEX_ARRAY);
 
-    //Iniciar a ferramenta de carregar imagens
-    ilInit();
-
-    init();
+    GenerateTerrain::init();
 
 // enter GLUT's main cycle
 	glutMainLoop();
 	
 	return 0;
 }
-
-
-void drawTerrain() {
-
-    // colocar aqui o código de desnho do terreno usando VBOs com TRIANGLE_STRIPS
-//    glBindBuffer(GL_ARRAY_BUFFER, buffers[0]);
-//    glVertexPointer(3, GL_FLOAT, 0, 0);
-//    for (int i = 0; i < imageHeight - 1 ; i++) {
-//        glDrawArrays(GL_TRIANGLE_STRIP, (imageWidth) * 2 * i, (imageWidth) * 2);
-//    }
-
-    float lengthDivision = 1.f;
-    float startX = 0.f;
-    float startZ = 0.f;
-    int numberDivisions = 10;
-
-    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
-//    for (int i = 0; i < numberDivisions; ++i) {
-//        DrawStripe(startX+i, startZ, lengthDivision,numberDivisions);
-//    }
-
-
-//    for (int i = 0; i < imageHeight-1; ++i) {
-//        DrawStripeHeight(startX+i, startZ, lengthDivision,imageWidth,arrayGrid,i);
-//    }
-
-    DrawStripeHeight(startX, startZ, lengthDivision,imageWidth,arrayGrid,0);
-    DrawStripeHeight(startX+1, startZ, lengthDivision,imageWidth,arrayGrid,0);
-
-
-}
-
-void DrawStripe(float startX,float startZ,float lengthDivision,int numberDivisions){
-
-    float endX = startX -lengthDivision;
-
-    glBegin(GL_TRIANGLE_STRIP);
-    //Draw a Stripe
-    for (int i = 0; i < numberDivisions*2 ; ++i) {
-        glColor3f(0.f,7/7.f,0.f);
-
-        float z =((i%2) == 0) ? startX : endX;
-        float x = floor(i/2.f) * -lengthDivision + startZ;
-
-        glVertex3d(x,0.0f,z);
-//        printf("x=%f z=%f \n",x,z);
-    }
-    glEnd();
-}
-
-bool active = true;
-void PrintOnce(int i)
-{
-    printf("number = %d\n",i);
-}
-//Carefull that the arrayHeights has capacity enough to suport the stripe Start
-void DrawStripeHeight(float startX,float startZ,float lengthDivision,int numberDivisions,float* arrayHeights,int currentLine){
-
-    float endX = startX -lengthDivision;
-
-    glBegin(GL_TRIANGLE_STRIP);
-    //Draw a Stripe
-    for (int i = 0; i < numberDivisions ; ++i) {
-        glColor3f(1.f,i/ (float) numberDivisions,0.f);
-        bool isPair = (i%2) == 0;
-
-        float z = isPair ? startX : endX;
-        float x = floor(i/2.f) * -lengthDivision + startZ;
-        float y;
-        if (isPair)
-            y= arrayHeights[numberDivisions * currentLine + i];
-        else
-            y = arrayHeights[numberDivisions * (currentLine+1) +i ];
-
-        glVertex3d(x,y,z);
-
-        if(active)
-            PrintOnce(i);
-    }
-    glEnd();
-    active = false;
-}
-

@@ -8,20 +8,11 @@
 
 #define _USE_MATH_DEFINES
 #include <math.h>
+#include "CameraHelper.h"
 
 float alfa = 0.0f, beta = 0.5f, radius = 100.0f;
-float camX, camY, camZ;
-
 
 void DrawPlaneBase();
-
-void spherical2Cartesian() {
-
-	camX = radius * cos(beta) * sin(alfa);
-	camY = radius * sin(beta);
-	camZ = radius * cos(beta) * cos(alfa);
-}
-
 
 void changeSize(int w, int h) {
 
@@ -57,17 +48,14 @@ void renderScene(void) {
 
 	// set the camera
 	glLoadIdentity();
-	gluLookAt(camX, camY, camZ,
-		0.0, 0.0, 0.0,
-		0.0f, 1.0f, 0.0f);
-
+	CameraHelper::SetUpCamera();
     DrawPlaneBase();
 
     // End of frame
-	
-	
+
+    glColor3f(1.f,0.f,0.f);
 	// put code to draw scene in here
-	
+	glutWireTeapot(2.f);
 	
 	glutSwapBuffers();
 }
@@ -85,45 +73,80 @@ void DrawPlaneBase() {
     glEnd();
 }
 
-
 void processKeys(unsigned char c, int xx, int yy) {
 
 // put code to process regular keys in here
+    printf("%c\n",c);
+    switch (c) {
+//        case 'a':
+//            lookX -= 0.5f;
+//            break;
+//        case 'd':
+//            lookX += 0.5f;
+//            break;
+//        case 's':
+//            lookY -= 0.5f;
+//            break;
+//        case 'w':
+//            lookY += 0.5f;
+//            break;
+        case 'w': {
+            CameraHelper::MoveCameraForward();
+            break;
+        }
+
+        case 's':{
+            CameraHelper::MoveCameraBackwards();
+            break;
+        }
+        case 'd':{
+            CameraHelper::MoveCameraRight();
+            break;
+        }
+        case 'a':{
+            CameraHelper::MoveCameraLeft();
+            break;
+        }
+
+    }
 
 }
 
 
 void processSpecialKeys(int key, int xx, int yy) {
-
-	switch (key) {
-
-	case GLUT_KEY_RIGHT:
-		alfa -= 0.1; break;
-
-	case GLUT_KEY_LEFT:
-		alfa += 0.1; break;
-
-	case GLUT_KEY_UP:
-		beta += 0.1f;
-		if (beta > 1.5f)
-			beta = 1.5f;
-		break;
-
-	case GLUT_KEY_DOWN:
-		beta -= 0.1f;
-		if (beta < -1.5f)
-			beta = -1.5f;
-		break;
-
-	case GLUT_KEY_PAGE_DOWN: radius -= 1.0f;
-		if (radius < 1.0f)
-			radius = 1.0f;
-		break;
-
-	case GLUT_KEY_PAGE_UP: radius += 1.0f; break;
-	}
-	spherical2Cartesian();
-	glutPostRedisplay();
+//
+//	switch (key) {
+//
+//	case GLUT_KEY_RIGHT:
+//		alfa -= 0.1;
+//        break;
+//
+//	case GLUT_KEY_LEFT:
+//		alfa += 0.1;
+//        break;
+//
+//	case GLUT_KEY_UP:
+//        if (beta > .5f)
+//            break;
+//		beta += 0.1f;
+//		break;
+//
+//	case GLUT_KEY_DOWN:
+//        if (beta <= 0.1f)
+//            break;
+//		beta -= 0.1f;
+//		break;
+//
+//	case GLUT_KEY_PAGE_DOWN:
+//        radius -= 1.0f;
+//		break;
+//
+//	case GLUT_KEY_PAGE_UP:
+//        radius += 1.0f;
+//        break;
+//	}
+//	spherical2Cartesian();
+//	glutPostRedisplay();
 
 }
 
@@ -150,6 +173,7 @@ int main(int argc, char **argv) {
 		
 // Required callback registry 
 	glutDisplayFunc(renderScene);
+    glutIdleFunc(renderScene);
 	glutReshapeFunc(changeSize);
 	
 // Callback registration for keyboard processing
@@ -159,8 +183,6 @@ int main(int argc, char **argv) {
 //  OpenGL settings
 	glEnable(GL_DEPTH_TEST);
 	//glEnable(GL_CULL_FACE);
-
-	spherical2Cartesian();
 
 	printInfo();
 

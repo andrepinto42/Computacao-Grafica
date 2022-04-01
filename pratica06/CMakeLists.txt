@@ -5,7 +5,9 @@ PROJECT(class6)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} main.cpp
+				Axes.cpp Axes.h
+				GenerateTerrain.cpp GenerateTerrain.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS})

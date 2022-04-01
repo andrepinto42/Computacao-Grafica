@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "class6"
+			"path" : "class5"
 		}
 	],
 	"backtrace" : 1,
@@ -11,8 +11,7 @@
 		"commands" : 
 		[
 			"add_executable",
-			"target_link_libraries",
-			"include_directories"
+			"target_link_libraries"
 		],
 		"files" : 
 		[
@@ -32,19 +31,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 64,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 72,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 70,
+				"line" : 58,
 				"parent" : 0
 			}
 		]
@@ -58,21 +45,15 @@
 					"fragment" : "-g"
 				}
 			],
-			"includes" : 
-			[
-				{
-					"backtrace" : 4,
-					"path" : "/usr/include/IL"
-				}
-			],
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
-	"id" : "class6::@6890427a1f51a3e7e1df",
+	"id" : "class5::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -121,25 +102,15 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libIL.so",
-				"role" : "libraries"
-			},
-			{
 				"backtrace" : 2,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libGLEW.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libIL.so",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "class6",
-	"nameOnDisk" : "class6",
+	"name" : "class5",
+	"nameOnDisk" : "class5",
 	"paths" : 
 	{
 		"build" : ".",
@@ -151,7 +122,15 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				2
 			]
 		}
 	],
@@ -162,6 +141,17 @@
 			"compileGroupIndex" : 0,
 			"path" : "main.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "CameraHelper.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "CameraHelper.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"
