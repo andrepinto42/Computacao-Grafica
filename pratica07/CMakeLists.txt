@@ -8,7 +8,8 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 add_executable(${PROJECT_NAME} main.cpp
 				Axes.cpp Axes.h
 				GenerateTerrain.cpp GenerateTerrain.h
-				CameraHelper.cpp CameraHelper.h)
+				CameraHelper.cpp CameraHelper.h
+				BilinearInterpolation.cpp BilinearInterpolation.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS})

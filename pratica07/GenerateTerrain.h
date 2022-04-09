@@ -6,6 +6,7 @@
 #define MAIN_CPP_GENERATETERRAIN_H
 class GenerateTerrain{
 public:
+
     static void drawTerrain();
 
     static void init();
@@ -14,5 +15,9 @@ public:
     static void DrawTeaPots();
 
     static float GetHeight(int x, int z);
+
+    static void SetUpVariavels(float *arr1, int imageWidth1);
+
+    static float GetHeightBilinearInterpolation(float x, float z);
 };
 #endif //MAIN_CPP_GENERATETERRAIN_H

@@ -17,6 +17,8 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include "GenerateTerrain.h"
+#include "BilinearInterpolation.h"
+
 #endif
 
 std::vector<float> arrayPointsTerrain;
@@ -25,15 +27,18 @@ void drawTerrain();
 
 void DrawStripe(float startXpos, float startZ, float lengthDivision, int numberDivisions);
 
-void DrawStripeHeight(float startXpos, float startZ, float lengthDivision, int numberDivisions, float* arrayHeights, int currentRow);
+void DrawStripeHeight(float startXpos, float startZ, float lengthDivision, int numberDivisions, float *arrayHeights,
+                      int currentRow);
 
-void DrawStripeHeightArray(float startX, float startZ, float lengthDivision, int numberDivisions, float* arrayHeights, int currentLine);
+void DrawStripeHeightArray(float startX, float startZ, float lengthDivision, int numberDivisions, float *arrayHeights,
+                           int currentLine);
 
+static float *arrayGrid;
+static int imageWidth;
+static int imageHeight;
 
 const bool ENABLE_VBO = true;
-float *arrayGrid;
-int imageWidth;
-int imageHeight;
+
 GLuint buffers[1];
 
 void GenerateTerrain::init() {
@@ -47,11 +52,11 @@ void GenerateTerrain::init() {
     // 	Load the height map "terreno.jpg"
     unsigned int t;
     unsigned char *imageData;
-    ilGenImages(1,&t);
+    ilGenImages(1, &t);
     ilBindImage(t);
 
     // terreno.jpg is the image containing our height map
-    ilLoadImage((ILstring)"terreno.jpg");
+    ilLoadImage((ILstring) "terreno.jpg");
 
     // convert the image to single channel per pixel
     // with values ranging between 0 and 255
@@ -64,7 +69,7 @@ void GenerateTerrain::init() {
     imageWidth = ilGetInteger(IL_IMAGE_WIDTH);
     imageHeight = ilGetInteger(IL_IMAGE_HEIGHT);
 
-    int numberPixels = imageWidth*imageHeight;
+    int numberPixels = imageWidth * imageHeight;
     // imageData is a LINEAR array with the pixel values
     imageData = ilGetData();
 
@@ -73,17 +78,18 @@ void GenerateTerrain::init() {
     // 	Build the vertex arrays
     const float maxHeight = 20.f;
 
-    arrayGrid = (float*) malloc(sizeof(float) * numberPixels);
+    arrayGrid = (float *) malloc(sizeof(float) * numberPixels);
 
     for (int i = 0; i < numberPixels; ++i) {
         //Maybe here do some math so the vertices dont look so distance from one another
-        arrayGrid[i] =  imageData[i];
-        printf("%f ",arrayGrid[i]);
+        arrayGrid[i] = imageData[i];
+        printf("%f ", arrayGrid[i]);
     }
 
     if (ENABLE_VBO)
         Fill_VBO_ArrayTerrain();
 
+    SetUpVariavels(arrayGrid, imageWidth);
 
     // 	OpenGL settings
     glEnable(GL_DEPTH_TEST);
@@ -94,8 +100,8 @@ void GenerateTerrain::Fill_VBO_ArrayTerrain() {
     float lengthDivision = 1.f;
     float startX = 0.f;
     float startZ = 0.f;
-    for (int i = 0; i < imageHeight-1; ++i) {
-        DrawStripeHeightArray(startX+i, startZ, lengthDivision,imageWidth,arrayGrid,i);
+    for (int i = 0; i < imageHeight - 1; ++i) {
+        DrawStripeHeightArray(startX + i, startZ, lengthDivision, imageWidth, arrayGrid, i);
     }
 
     //Build the VBO
@@ -104,108 +110,109 @@ void GenerateTerrain::Fill_VBO_ArrayTerrain() {
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * arrayPointsTerrain.size(), arrayPointsTerrain.data(), GL_STATIC_DRAW);
 }
 
-//TODO
-void GenerateTerrain::drawTerrain(){
 
-    if (ENABLE_VBO)
-    {
-        glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+void GenerateTerrain::drawTerrain() {
+
+    if (ENABLE_VBO) {
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
         //Desenhar terreno usando VBOs com TRIANGLE_STRIPS
         glBindBuffer(GL_ARRAY_BUFFER, buffers[0]);
         glVertexPointer(3, GL_FLOAT, 0, 0);
         //Iterar imageHeight-1 pois não é necessário desenhar a ultima strip de terreno
-        for (int i = 0; i < imageHeight - 1 ; i++) {
-            glColor3f( float ((imageHeight - 1) -i) / (float)(imageHeight-1),(float)i / (float)(imageHeight-1),0.f );
+        for (int i = 0; i < imageHeight - 1; i++) {
+            glColor3f(float((imageHeight - 1) - i) / (float) (imageHeight - 1), (float) i / (float) (imageHeight - 1),
+                      0.f);
             glDrawArrays(GL_TRIANGLE_STRIP, (imageWidth) * 2 * i, (imageWidth) * 2);
         }
-    }
-
-    else{
+    } else {
 
         float lengthDivision = 1.f;
         float startX = 0.f;
         float startZ = 0.f;
 
-        glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-        for (int i = 0; i < imageHeight-1; ++i) {
-            DrawStripeHeight(startX+i, startZ, lengthDivision,imageWidth,arrayGrid,i);
+        for (int i = 0; i < imageHeight - 1; ++i) {
+            DrawStripeHeight(startX + i, startZ, lengthDivision, imageWidth, arrayGrid, i);
         }
     }
 
 }
-float speedPots=0.1f;
+
+float speedPots = 0.1f;
+const float radius = 10.f;
+const int numberPots = 15;
+const float sizeTeaPot = 1.f;
+
 void GenerateTerrain::DrawTeaPots() {
+    float spacingAnglesCircle = M_PI * 2.f / (float) numberPots;
 
-    float x = -imageHeight/2.f;
-    float z = imageWidth/2.f +50.f;
+    //Posicao Inicial
+    float xInitial = -imageHeight / 2.f;
+    float zInitial = imageWidth / 2.f - 70.f;
 
-    float y = GetHeight((int) x,(int) z);
-    printf("height -->%f\n",y);
-    //Por agora é desnecessário
-    //    glPushMatrix();
+    //Levantar 0.75 pois o tamanho é igual a 1.
+    glTranslatef(xInitial, sizeTeaPot/0.75f, zInitial);
+//    glutWireTeapot(5.f);
 
-    glTranslatef(x,y,z);
-    glutWireTeapot(5.f);
-
-    float radius = 10.f;
-    int numberPots = 15;
-    float spacingAnglesCircle =M_PI * 2.f / (float) numberPots;
     for (int i = 0; i < numberPots; i++) {
-        x = cos(spacingAnglesCircle * (float)i +speedPots  ) * radius;
-        z = sin(spacingAnglesCircle * (float)i +speedPots ) * radius;
-        y = GetHeight(x,z);
+        float x = cos(spacingAnglesCircle * (float) i + speedPots) * radius;
+        float z = sin(spacingAnglesCircle * (float) i + speedPots) * radius;
+        float pointX = x + xInitial;
+        float pointZ = z + zInitial;
+
+        //Usar interpolaçao bilinear para descobrir altura dependendo do ponto que se encontra
+        float y = GetHeightBilinearInterpolation( pointX, pointZ);
+
         glPushMatrix();
-        glTranslatef(x,y,z);
-        glutWireTeapot(1.f);
+        glTranslatef(x, y, z);
+        glutWireTeapot(sizeTeaPot);
         glPopMatrix();
     }
-    speedPots+=0.01f;
-
-    //Por agora é desnecessário se o glPushMatrix estiver ativo
-    //    glPopMatrix();
+    speedPots += 0.01f;
 }
 
-void DrawStripe(float startX, float startZ, float lengthDivision, int numberDivisions){
+void DrawStripe(float startX, float startZ, float lengthDivision, int numberDivisions) {
 
-    float endX = startX -lengthDivision;
+    float endX = startX - lengthDivision;
 
     glBegin(GL_TRIANGLE_STRIP);
     //Draw a Stripe
-    for (int i = 0; i < numberDivisions*2 ; ++i) {
-        glColor3f(0.f,7/7.f,0.f);
+    for (int i = 0; i < numberDivisions * 2; ++i) {
+        glColor3f(0.f, 7 / 7.f, 0.f);
 
-        float z =((i%2) == 0) ? startX : endX;
-        float x = floor(i/2.f) * -lengthDivision + startZ;
+        float z = ((i % 2) == 0) ? startX : endX;
+        float x = floor(i / 2.f) * -lengthDivision + startZ;
 
-        glVertex3d(x,0.0f,z);
+        glVertex3d(x, 0.0f, z);
 //        printf("x=%f z=%f \n",x,z);
     }
     glEnd();
 }
 
 //Carefull that the arrayHeights has capacity enough to suport the stripe Start
-void DrawStripeHeight(float startX,float startZ,float lengthDivision,int numberDivisions,float* arrayHeights,int currentLine){
+void DrawStripeHeight(float startX, float startZ, float lengthDivision, int numberDivisions, float *arrayHeights,
+                      int currentLine) {
 
-    float endX = startX -lengthDivision;
+    float endX = startX - lengthDivision;
 
     glBegin(GL_TRIANGLE_STRIP);
 
     //Draw a Stripe
-    for (int i = 0; i < numberDivisions *2; ++i) {
-        glColor3f(1.f,i/ ((float) numberDivisions * 2.f),0.f);
-        bool isPair = (i%2) == 0;
+    for (int i = 0; i < numberDivisions * 2; ++i) {
+        glColor3f(1.f, i / ((float) numberDivisions * 2.f), 0.f);
+        bool isPair = (i % 2) == 0;
 
-        float x = floor(i/2.f) * -lengthDivision + startZ;
+        float x = floor(i / 2.f) * -lengthDivision + startZ;
         float z = isPair ? startX : endX;
         float y;
         if (isPair)
-            y = arrayHeights[numberDivisions * (currentLine+1) +i/2];
+            y = arrayHeights[numberDivisions * (currentLine + 1) + i / 2];
         else
-            y= arrayHeights[numberDivisions * currentLine + i/2];
+            y = arrayHeights[numberDivisions * currentLine + i / 2];
 
-        glVertex3d(x,y,z);
+        glVertex3d(x, y, z);
 
 //        if(active)
 //        {
@@ -221,30 +228,32 @@ void DrawStripeHeight(float startX,float startZ,float lengthDivision,int numberD
 }
 
 //Carefull that the arrayHeights has capacity enough to suport the stripe Start
-void DrawStripeHeightArray(float startX,float startZ,float lengthDivision,int numberDivisions,float* arrayHeights,int currentLine){
-    float endX = startX -lengthDivision;
+void DrawStripeHeightArray(float startX, float startZ, float lengthDivision, int numberDivisions, float *arrayHeights,
+                           int currentLine) {
+    float endX = startX - lengthDivision;
     //Draw a Stripe
-    for (int i = 0; i < numberDivisions *2; ++i) {
-        glColor3f(1.f,i/ ((float) numberDivisions * 2.f),0.f);
-        bool isPair = (i%2) == 0;
+    for (int i = 0; i < numberDivisions * 2; ++i) {
+        glColor3f(1.f, i / ((float) numberDivisions * 2.f), 0.f);
+        bool isPair = (i % 2) == 0;
 
-        float x = floor(i/2.f) * -lengthDivision + startZ;
+        float x = floor(i / 2.f) * -lengthDivision + startZ;
         float z = isPair ? startX : endX;
         float y;
         if (isPair)
-            y = arrayHeights[numberDivisions * (currentLine+1) +i/2];
+            y = arrayHeights[numberDivisions * (currentLine + 1) + i / 2];
         else
-            y= arrayHeights[numberDivisions * currentLine + i/2];
+            y = arrayHeights[numberDivisions * currentLine + i / 2];
 
-        if(currentLine == 0)
-        {
+        if (currentLine == 0) {
 
-        printf("x = %f, y = %f, z = %f\n",x,y,z);
-        if (isPair)
-            printf("index = %d ,height = %f ",numberDivisions * currentLine + i/2,arrayHeights[numberDivisions * currentLine + i/2]);
-        else
-            printf("index = %d ,height = %f ",numberDivisions * (currentLine+1) + i/2,arrayHeights[numberDivisions * (currentLine+1) + i/2]);
-        printf("i = %d\n\n",i);
+            printf("x = %f, y = %f, z = %f\n", x, y, z);
+            if (isPair)
+                printf("index = %d ,height = %f ", numberDivisions * currentLine + i / 2,
+                       arrayHeights[numberDivisions * currentLine + i / 2]);
+            else
+                printf("index = %d ,height = %f ", numberDivisions * (currentLine + 1) + i / 2,
+                       arrayHeights[numberDivisions * (currentLine + 1) + i / 2]);
+            printf("i = %d\n\n", i);
         }
 
         arrayPointsTerrain.push_back(x);
@@ -254,6 +263,4 @@ void DrawStripeHeightArray(float startX,float startZ,float lengthDivision,int nu
 }
 
 
-float GenerateTerrain::GetHeight(int x,int z){
-    return arrayGrid[ z*imageWidth + x];
-}
+

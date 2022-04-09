@@ -100,6 +100,13 @@ build CMakeFiles/class6.dir/CameraHelper.cpp.o: CXX_COMPILER__class6_Debug /home
   OBJECT_DIR = CMakeFiles/class6.dir
   OBJECT_FILE_DIR = CMakeFiles/class6.dir
 
+build CMakeFiles/class6.dir/BilinearInterpolation.cpp.o: CXX_COMPILER__class6_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/pratica07/BilinearInterpolation.cpp || cmake_object_order_depends_target_class6
+  DEP_FILE = CMakeFiles/class6.dir/BilinearInterpolation.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/usr/include/IL
+  OBJECT_DIR = CMakeFiles/class6.dir
+  OBJECT_FILE_DIR = CMakeFiles/class6.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target class6
@@ -108,7 +115,7 @@ build CMakeFiles/class6.dir/CameraHelper.cpp.o: CXX_COMPILER__class6_Debug /home
 #############################################
 # Link the executable class6
 
-build class6: CXX_EXECUTABLE_LINKER__class6_Debug CMakeFiles/class6.dir/main.cpp.o CMakeFiles/class6.dir/Axes.cpp.o CMakeFiles/class6.dir/GenerateTerrain.cpp.o CMakeFiles/class6.dir/CameraHelper.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libglut.so /usr/lib/x86_64-linux-gnu/libGLEW.so /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libglut.so /usr/lib/x86_64-linux-gnu/libIL.so /usr/lib/x86_64-linux-gnu/libGLEW.so /usr/lib/x86_64-linux-gnu/libIL.so
+build class6: CXX_EXECUTABLE_LINKER__class6_Debug CMakeFiles/class6.dir/main.cpp.o CMakeFiles/class6.dir/Axes.cpp.o CMakeFiles/class6.dir/GenerateTerrain.cpp.o CMakeFiles/class6.dir/CameraHelper.cpp.o CMakeFiles/class6.dir/BilinearInterpolation.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libglut.so /usr/lib/x86_64-linux-gnu/libGLEW.so /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libglut.so /usr/lib/x86_64-linux-gnu/libIL.so /usr/lib/x86_64-linux-gnu/libGLEW.so /usr/lib/x86_64-linux-gnu/libIL.so
   FLAGS = -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libGL.so  /usr/lib/x86_64-linux-gnu/libGLU.so  /usr/lib/x86_64-linux-gnu/libglut.so  /usr/lib/x86_64-linux-gnu/libGLEW.so  /usr/lib/x86_64-linux-gnu/libGL.so  /usr/lib/x86_64-linux-gnu/libGLU.so  /usr/lib/x86_64-linux-gnu/libglut.so  /usr/lib/x86_64-linux-gnu/libIL.so  /usr/lib/x86_64-linux-gnu/libGLEW.so  /usr/lib/x86_64-linux-gnu/libIL.so
   OBJECT_DIR = CMakeFiles/class6.dir
