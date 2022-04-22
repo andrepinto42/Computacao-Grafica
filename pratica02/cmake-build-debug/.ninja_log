@@ -1,0 +1,6 @@
+# ninja log v5
+0	106	1650379344538560708	CMakeFiles/class1.dir/main.cpp.o	b6f2ec1eb5da4b58
+1	106	1650379344538560708	CMakeFiles/class1.dir/Helper.cpp.o	d18fc05ccf6ce451
+106	175	1650379344606561105	class1	9fedbdea66ff5994
+0	107	1650379498947459163	CMakeFiles/class1.dir/Helper.cpp.o	d18fc05ccf6ce451
+107	176	1650379499015459559	class1	9fedbdea66ff5994

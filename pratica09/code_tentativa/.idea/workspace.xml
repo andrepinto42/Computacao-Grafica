@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="36f829e8-3fad-4972-ae09-1c44a4bcf628" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../TP-Computacao-Grafica-master/TransformationsDataStruct/Transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP-Computacao-Grafica-master/TransformationsDataStruct/Transform.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Videos/2022-04-09 15-10-29.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Videos/2022-04-09 15-11-19.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/.cmake/api/v1/reply/cache-v2-0c863e20b6134e55a380.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-276b7652dd21a0b00819.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/.cmake/api/v1/reply/index-2022-03-04T08-25-18-0660.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-9050b2082b4fe5719297.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdCXX/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdCXX/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/class1.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/class1.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/class1.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/class1.dir/compiler_depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/class1.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/class1.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/class1.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/class1.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/class1.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/class1.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/class1.dir/main.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/class1.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica01/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica02/.idea/.gitignore.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica02/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica02/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica02/.idea/.name.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica02/.idea/misc.xml.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica02/.idea/modules.xml.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica02/.idea/pratica02.iml.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica02/.idea/vcs.xml.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica02/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica02/.idea/workspace.xml.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica02/Helper.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica02/Helper.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica03/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica03/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica03/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica03/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica03/cmake-build-debug/CMakeFiles/class4.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica03/cmake-build-debug/CMakeFiles/class4.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica03/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica03/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica03/cmake-build-debug/class4" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica03/cmake-build-debug/class4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica03/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica03/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica05/code5/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica05/code5/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica05/code5/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica05/code5/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica05/code5/cmake-build-debug/CMakeFiles/class5.dir/CameraHelper.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica05/code5/cmake-build-debug/CMakeFiles/class5.dir/CameraHelper.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica05/code5/cmake-build-debug/CMakeFiles/class5.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica05/code5/cmake-build-debug/CMakeFiles/class5.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica05/code5/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica05/code5/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica05/code5/cmake-build-debug/class5" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica05/code5/cmake-build-debug/class5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica06/GenerateTerrain.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica06/GenerateTerrain.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica06/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica06/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica06/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica06/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica06/cmake-build-debug/CMakeFiles/class6.dir/GenerateTerrain.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica06/cmake-build-debug/CMakeFiles/class6.dir/GenerateTerrain.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica06/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica06/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica06/cmake-build-debug/class6" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica06/cmake-build-debug/class6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica07/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica07/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pratica08/catmull-rom.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../pratica08/catmull-rom.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2021" />
+    <option name="minorVersion" value="3.3" />
+  </component>
+  <component name="ProjectId" id="289E3SNFi8zAl9EIGIAAmofzsbY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36f829e8-3fad-4972-ae09-1c44a4bcf628" name="Changes" comment="" />
+      <created>1650620201656</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650620201656</updated>
+      <workItem from="1650620202756" duration="501000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

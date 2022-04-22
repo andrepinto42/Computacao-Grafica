@@ -16,7 +16,12 @@ int alpha = 0, beta = 0, r = 5;
 
 #define POINT_COUNT 5
 // Points that make up the loop for catmull-rom interpolation
-float p[POINT_COUNT][3] = {{-1,-1,0},{-1,1,0},{1,1,0},{0,0,0},{1,-1,0}};
+float p[POINT_COUNT][3] =
+        {{-1,-1,0},
+         {-1,1,0},
+         {1,1,1},
+         {0,0,0},
+         {1,-1,1}};
 
 void buildRotMatrix(float *x, float *y, float *z, float *m) {
 
@@ -70,21 +75,32 @@ void getCatmullRomPoint(float t, float *p0, float *p1, float *p2, float *p3, flo
 						{ 1.0f, -2.5f,  2.0f, -0.5f},
 						{-0.5f,  0.0f,  0.5f,  0.0f},
 						{ 0.0f,  1.0f,  0.0f,  0.0f}};
-			
-	// Compute A = M * P
-	
-	// Compute pos = T * A
-	
-	// compute deriv = T' * A
 
-	// ...
+
+    // For each component i: // x, y, z
+    for (int i = 0; i < 3; ++i) {
+        float a[4];
+        float p[4] = {p0[i], p1[i], p2[i],p3[i] };
+        // Compute vector A = M * P // use function multMatrixVector
+
+        multMatrixVector(*m,p,a);
+
+        // in component i P is the vector (p0[i], p1[i], p2[i],p3[i]
+
+        // Compute pos[i] = T * A
+        pos[i] = pow(t,3) * a[0] + pow(t,2)*a[1] + t * a[2] + a[3];
+
+        // compute deriv[i] = T' * A
+        deriv[i] = 3* pow(t,2) * a[0] + 2 * t * a[1] + a[2];// a[3] * 0
+    }
+
 }
 
 
 // given  global t, returns the point in the curve
-void getGlobalCatmullRomPoint(float gt, float *pos, float *deriv) {
+void getGlobalCatmullRomPoint(float nivelDeInterpolacao, float *pos, float *deriv) {
 
-	float t = gt * POINT_COUNT; // this is the real global t
+	float t = nivelDeInterpolacao * POINT_COUNT; // this is the real global t
 	int index = floor(t);  // which segment
 	t = t - index; // where within  the segment
 
@@ -123,16 +139,28 @@ void changeSize(int w, int h) {
 	glMatrixMode(GL_MODELVIEW);
 }
 
+const int TESSELATION = 100;
+const float increase_TESSELATION = 1/TESSELATION;
 
 void renderCatmullRomCurve() {
-
+    float pos[4];
+    float deriv[4];
 // draw curve using line segments with GL_LINE_LOOP
+    glBegin(GL_LINE_LOOP);
+    float nivelDeInterpolacao = 0.f;
+
+    for (int i = 0; i < TESSELATION; ++i) {
+        getGlobalCatmullRomPoint(nivelDeInterpolacao,  pos,  deriv);
+        glVertex3f(pos[0], pos[1], pos[2]);
+        nivelDeInterpolacao+=0.01f;
+    }
+    glEnd();
 }
 
 
 void renderScene(void) {
 
-	static float t = 0;
+	static float posicaoTeaPotCurva = 0;
 
 	glClearColor(0.0f,0.0f,0.0f,0.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -146,11 +174,34 @@ void renderScene(void) {
 
 	// apply transformations here
 	// ...
+    float pos[3];
+    float deriv[3];
+
+    getGlobalCatmullRomPoint(posicaoTeaPotCurva, pos, deriv);
+
+    glTranslatef(pos[0],pos[1],pos[2]);
+
+    float x[3] = { deriv[0],deriv[1],deriv[2]};
+    normalize(x);
+
+    float z[3];
+    float y_Inicial[3] = {0,1,0};
+    cross(x,y_Inicial,z);
+    normalize(z);
+
+    float y[3];
+    cross(z,x,y);
+    normalize(y);
+
+    float m[16];
+    buildRotMatrix(x,y,z,m);
+
+    glMultMatrixf(m);
+
 	glutWireTeapot(0.1);
 
-
 	glutSwapBuffers();
-	t+=0.00001;
+    posicaoTeaPotCurva+=0.001;
 }
 
 
